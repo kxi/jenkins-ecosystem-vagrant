@@ -31,7 +31,6 @@ Vagrant.configure(2) do |config|
   config.vm.define "jenkins-slave" do |agent|
     agent.vm.box = "centos/7"
     agent.vm.hostname = "jenkins-slave"
-    agent.vm.network "forwarded_port", guest: 8153, host: 2153
     agent.vm.network "private_network", ip: "192.168.60.3"
     agent.vm.provider "virtualbox" do |vb|
       vb.memory = "1024"
